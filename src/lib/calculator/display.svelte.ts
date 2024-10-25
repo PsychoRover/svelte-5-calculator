@@ -8,7 +8,7 @@ class Display {
 	private value: string = $state('');
 
 	update(value: string): void {
-		// Turn off answer if operator is pressed
+		// Turn off answer mode if operator is pressed
 		if (solver.ans && Display.isOperator(value)) solver.ans = false;
 
 		// Do nothing if answer mode is on and operator is not pressed
