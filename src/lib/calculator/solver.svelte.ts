@@ -1,4 +1,5 @@
 import { display } from './display.svelte';
+import * as math from 'mathjs'
 
 class Solver {
 	public ans: boolean = false;
@@ -8,7 +9,7 @@ class Solver {
 		let expression: string = display.get().replace(/x/g, '*').replace(/÷/g, '/');
 
 		try {
-			result = eval(expression);
+			result = math.evaluate(expression);
 		} catch (error) {
 			console.log(error);
 			display.invalid();
